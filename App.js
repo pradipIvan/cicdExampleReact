@@ -52,9 +52,10 @@ const Section = ({children, title}): Node => {
   );
 };
 
+
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
-
+  // console.log("cjsdbcsdhj")
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
