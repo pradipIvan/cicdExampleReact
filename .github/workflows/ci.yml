@@ -71,3 +71,39 @@ jobs:
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: Aab
+      #     path: android/app/build/outputs/bundle/release/app-release.aab
+
+  # build-ios:
+  #     runs-on: macos-latest
+  #     steps:
+  #       - uses: actions/checkout@v2
+  #       - uses: actions/cache@v2
+  #         with:
+  #           path: node_modules
+  #           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+  #           restore-keys: |
+  #             ${{ runner.os }}-yarn-
+  #       - uses: actions/cache@v2
+  #         with:
+  #           path: ~/Library/Caches/CocoaPods
+  #           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+  #           restore-keys: |
+  #             ${{ runner.os }}-pods-
+  #       - uses: actions/cache@v2
+  #         with:
+  #           path: ~/.cocoapods
+  #           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+  #           restore-keys: |
+  #             ${{ runner.os }}-pods-
+  #       # - run: yarn install --frozen-lockfile
+  #       - run: npm install
+
+  #       - run: pod install
+  #         working-directory: ios
+
+  #       - run: xcodebuild clean archive -workspace reactNativeCicd.xcworkspace -scheme reactNativeCicd -archivePath reactNativeCicd.xcarchive CODE_SIGNING_ALLOWED=NO | xcpretty
+  #         working-directory: ios
